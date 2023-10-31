@@ -40,4 +40,6 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), name='password_reset_done'),
     path('reset/confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'), name='password_reset_confirm'),
     path('reset/complete/', auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), name='password_reset_complete'),
+    path('board/<int:pk>/topics/<int:topic_pk>/',views.topic_posts,name='topic_posts'),
+    path('board/<int:pk>/topics/<int:topic_pk>/reply',views.reply_topic,name='reply_topic'),
 ]
